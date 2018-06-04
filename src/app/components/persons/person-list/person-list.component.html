@@ -1,3 +1,32 @@
-<p>
-  person-list works!
-</p>
+<table class="table table-hover">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Address</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Age</th>
+    <th scope="col">Height</th>
+    <th scope="col">Target (kg)</th>
+    <th scope="col">Illness</th>
+    <th scope="col">Medication</th>
+    <th scope="col">Allergies</th>
+  </tr>
+  <tr *ngFor="let person of persons">
+    <td>{{person.id}}</td>
+    <td>{{person.name}}</td>
+    <td>{{person.address}}</td>
+    <td>{{person.phone}}</td>
+    <td style="text-align: center">{{person.age}}</td>
+    <td style="text-align: center">{{person.height}}</td>
+    <td style="text-align: center">{{person.targetKg}}</td>
+    <td>{{person.illness}}</td>
+    <td>{{person.medication}}</td>
+    <td>{{person.allergies}}</td>
+    <td>
+      <button type="button" class="btn btn-primary">Profile</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+</table>
