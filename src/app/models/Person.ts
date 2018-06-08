@@ -5,13 +5,13 @@ export class Person {
     phone: string;
     age: number;
     height: number;
-    targetKg: number;
+    targetkg: number;
     illness: string;
     medication: string;
     allergies: string;
 
     constructor(id: number, name: string, address: string, phone: string, age: number,
-        height: number, targetKg: number, illness: string, medication: string, allergies: string) {
+        height: number, targetkg: number, illness: string, medication: string, allergies: string) {
         this.address = address;
         this.age = age;
         this.allergies = allergies;
@@ -21,7 +21,7 @@ export class Person {
         this.medication = medication;
         this.name = name;
         this.phone = phone;
-        this.targetKg = targetKg;
+        this.targetkg = targetkg;
     }
 
 }
