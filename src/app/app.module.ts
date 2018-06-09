@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PersonListComponent } from './components/persons/person-list/person-list.component';
 import { PersonService } from './services/person.service';
+import { PersonNewFormComponent } from './components/persons/person-new-form/person-new-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PersonListComponent
+    PersonListComponent,
+    PersonNewFormComponent
   ],
   imports: [
     BrowserModule,
