@@ -1,3 +1,45 @@
-<p>
-  person-new-form works!
-</p>
+<h2>Add New Person</h2>
+<div class="card card-body mb-3">
+  <form>
+    <div class="form-group">
+      <label for="personName">Full Name</label>
+      <input [(ngModel)]="person.name" type="text" class="form-control" id="personName" placeholder="Full Name..." name="personName">
+    </div>
+    <div class="form-group">
+      <label for="personAddress">Address</label>
+      <input [(ngModel)]="person.address" type="text" class="form-control" id="personAddress" placeholder="Address..." name="personAddress">
+    </div>
+    <div class="form-group">
+      <label for="personPhone">Phone</label>
+      <input [(ngModel)]="person.phone" type="text" class="form-control" id="personPhone" placeholder="Phone..." name="personPhone">
+    </div>
+    <div class="form-group">
+      <label for="personAge">Age</label>
+      <input [(ngModel)]="person.age" type="number" class="form-control" id="personAge" placeholder="Age..." name="personAge">
+    </div>
+    <div class="form-group">
+      <label for="personHeight">Height</label>
+      <input [(ngModel)]="person.height" type="number" class="form-control" id="personHeight" placeholder="Height..." name="personHeight">
+    </div>
+    <div class="form-group">
+      <label for="personTargetKg">Target (Kg)</label>
+      <input [(ngModel)]="person.targetkg" type="number" class="form-control" id="personTargetKg" placeholder="Target (Kg)..."
+        name="personTargetkg">
+    </div>
+    <div class="form-group">
+      <label for="personIllness">Illness</label>
+      <input [(ngModel)]="person.illness" type="text" class="form-control" id="personIllness" placeholder="Illness..." name="personIllness">
+    </div>
+    <div class="form-group">
+      <label for="personMedication">Medication</label>
+      <input [(ngModel)]="person.medication" type="text" class="form-control" id="personMedication" placeholder="Medication..."
+        name="personMedication">
+    </div>
+    <div class="form-group">
+      <label for="personAllergies">Allergies</label>
+      <input [(ngModel)]="person.allergies" type="text" class="form-control" id="personAllergies" placeholder="Allergies..." name="personAllergies">
+    </div>
+    <button (click)="addPerson()" class="btn btn-primary">Save</button>
+    <button (click)="clear()" class="btn btn-light">Clear</button>
+  </form>
+</div>
