@@ -1,45 +1,75 @@
 <h2>Add New Person</h2>
 <div class="card card-body mb-3">
-  <form>
+  <form #personForm="ngForm" (ngSubmit)="onSubmit(personForm)">
+
     <div class="form-group">
       <label for="personName">Full Name</label>
-      <input [(ngModel)]="person.name" type="text" class="form-control" id="personName" placeholder="Full Name..." name="personName">
+      <input #personName="ngModel" [ngClass]="{'is-invalid':personName.errors && personName.touched}" [(ngModel)]="person.name"
+        required minlength="2" type="text" class="form-control" id="personName" placeholder="Full Name..." name="personName"
+      />
+      <div [hidden]="!personName.errors?.required" class="invalid-feedback">Name is required</div>
+      <div [hidden]="!personName.errors?.minlength" class="invalid-feedback">Must be at least two characters</div>
     </div>
+
     <div class="form-group">
       <label for="personAddress">Address</label>
-      <input [(ngModel)]="person.address" type="text" class="form-control" id="personAddress" placeholder="Address..." name="personAddress">
+      <input #personAddress="ngModel" [ngClass]="{'is-invalid':personAddress.errors && personAddress.touched}" [(ngModel)]="person.address"
+        required type="text" class="form-control" id="personAddress" placeholder="Address..." name="personAddress" />
+      <div [hidden]="!personAddress.errors?.required" class="invalid-feedback">Address is required</div>
     </div>
+
     <div class="form-group">
       <label for="personPhone">Phone</label>
-      <input [(ngModel)]="person.phone" type="text" class="form-control" id="personPhone" placeholder="Phone..." name="personPhone">
+      <input #personPhone="ngModel" [ngClass]="{'is-invalid':personPhone.errors && personPhone.touched}" [(ngModel)]="person.phone"
+        required type="text" class="form-control" id="personPhone" placeholder="Phone..." name="personPhone" />
+      <div [hidden]="!personPhone.errors?.required" class="invalid-feedback">Phone is required</div>
     </div>
+
     <div class="form-group">
       <label for="personAge">Age</label>
-      <input [(ngModel)]="person.age" type="number" class="form-control" id="personAge" placeholder="Age..." name="personAge">
+      <input #personAge="ngModel" [ngClass]="{'is-invalid':personAge.errors && personAge.touched}" [(ngModel)]="person.age" required
+        type="number" class="form-control" id="personAge" placeholder="Age..." name="personAge" />
+      <div [hidden]="!personAge.errors?.required" class="invalid-feedback">Age is required</div>
     </div>
+
     <div class="form-group">
       <label for="personHeight">Height</label>
-      <input [(ngModel)]="person.height" type="number" class="form-control" id="personHeight" placeholder="Height..." name="personHeight">
+      <input #personHeight="ngModel" [ngClass]="{'is-invalid':personHeight.errors && personHeight.touched}" [(ngModel)]="person.height"
+        required type="number" class="form-control" id="personHeight" placeholder="Height..." name="personHeight" />
+      <div [hidden]="!personHeight.errors?.required" class="invalid-feedback">Height is required</div>
     </div>
+
     <div class="form-group">
       <label for="personTargetKg">Target (Kg)</label>
-      <input [(ngModel)]="person.targetkg" type="number" class="form-control" id="personTargetKg" placeholder="Target (Kg)..."
-        name="personTargetkg">
+      <input #personTargetkg="ngModel" [ngClass]="{'is-invalid':personTargetkg.errors && personTargetkg.touched}" [(ngModel)]="person.targetkg"
+        required type="number" class="form-control" id="personTargetKg" placeholder="Target (Kg)..." name="personTargetkg"
+      />
+      <div [hidden]="!personTargetkg.errors?.required" class="invalid-feedback">Target KG is required</div>
     </div>
+
     <div class="form-group">
       <label for="personIllness">Illness</label>
-      <input [(ngModel)]="person.illness" type="text" class="form-control" id="personIllness" placeholder="Illness..." name="personIllness">
+      <input #personIllness="ngModel" [ngClass]="{'is-invalid':personIllness.errors && personIllness.touched}" [(ngModel)]="person.illness"
+        required type="text" class="form-control" id="personIllness" placeholder="Illness..." name="personIllness" />
+      <div [hidden]="!personIllness.errors?.required" class="invalid-feedback">Illness is required</div>
     </div>
+
     <div class="form-group">
       <label for="personMedication">Medication</label>
-      <input [(ngModel)]="person.medication" type="text" class="form-control" id="personMedication" placeholder="Medication..."
-        name="personMedication">
+      <input #personMedication="ngModel" [ngClass]="{'is-invalid':personMedication.errors && personMedication.touched}" [(ngModel)]="person.medication"
+        required type="text" class="form-control" id="personMedication" placeholder="Medication..." name="personMedication"
+      />
+      <div [hidden]="!personMedication.errors?.required" class="invalid-feedback">Medication is required</div>
     </div>
+
     <div class="form-group">
       <label for="personAllergies">Allergies</label>
-      <input [(ngModel)]="person.allergies" type="text" class="form-control" id="personAllergies" placeholder="Allergies..." name="personAllergies">
+      <input #personAllergies="ngModel" [ngClass]="{'is-invalid':personAllergies.errors && personAllergies.touched}" [(ngModel)]="person.allergies"
+        required type="text" class="form-control" id="personAllergies" placeholder="Allergies..." name="personAllergies" />
+      <div [hidden]="!personAllergies.errors?.required" class="invalid-feedback">Allergies is required</div>
     </div>
-    <button (click)="addPerson()" class="btn btn-primary">Save</button>
+
+    <button [disabled]="!personForm.form.valid" (click)="addPerson()" class="btn btn-primary">Save</button>
     <button (click)="clear()" class="btn btn-light">Clear</button>
   </form>
 </div>
