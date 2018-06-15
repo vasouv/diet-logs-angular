@@ -5,12 +5,14 @@ import { PersonListComponent } from './components/persons/person-list/person-lis
 import { PersonNewFormComponent } from './components/persons/person-new-form/person-new-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppointmentsListComponent } from './components/appointments/appointments-list/appointments-list.component';
+import { PersonProfileComponent } from './components/persons/person-profile/person-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'persons', component: PersonListComponent },
   { path: 'person-new', component: PersonNewFormComponent },
   { path: 'appointments', component: AppointmentsListComponent },
+  { path: 'profile/:id', component: PersonProfileComponent },
   { path: '**', component: NotFoundComponent }
 ]
 

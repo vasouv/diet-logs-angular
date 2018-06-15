@@ -22,7 +22,6 @@ export class PersonListComponent implements OnInit {
 
   private fetchDataFromBackend() {
     this.personService.getPersons().subscribe(result => {
-      console.log(result);
       this.persons = result;
     });
   }

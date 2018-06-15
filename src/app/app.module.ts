@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppointmentsListComponent } from './components/appointments/appointments-list/appointments-list.component';
+import { PersonProfileComponent } from './components/persons/person-profile/person-profile.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AppointmentsListComponent } from './components/appointments/appointment
     PersonNewFormComponent,
     HomeComponent,
     NotFoundComponent,
-    AppointmentsListComponent
+    AppointmentsListComponent,
+    PersonProfileComponent
   ],
   imports: [
     BrowserModule,
