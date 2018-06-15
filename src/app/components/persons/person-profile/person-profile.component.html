@@ -1,3 +1,50 @@
-<p>
-  person-profile works!
-</p>
+<div *ngIf="person">
+  <h2>{{ person.name | uppercase }} Details</h2>
+  <div>
+    <span>id: </span>{{ person.id }}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="person.name" placeholder="name">
+    </label>
+  </div>
+  <div>
+    <label>address:
+      <input [(ngModel)]="person.address" placeholder="address">
+    </label>
+  </div>
+  <div>
+    <label>phone:
+      <input [(ngModel)]="person.phone" placeholder="phone">
+    </label>
+  </div>
+  <div>
+    <label>age:
+      <input [(ngModel)]="person.age" placeholder="age">
+    </label>
+  </div>
+  <div>
+    <label>height:
+      <input [(ngModel)]="person.height" placeholder="height">
+    </label>
+  </div>
+  <div>
+    <label>target kg:
+      <input [(ngModel)]="person.targetkg" placeholder="targetkg">
+    </label>
+  </div>
+  <div>
+    <label>illness:
+      <input [(ngModel)]="person.illness" placeholder="illness">
+    </label>
+  </div>
+  <div>
+    <label>medication:
+      <input [(ngModel)]="person.medication" placeholder="medication">
+    </label>
+  </div>
+  <div>
+    <label>allergies:
+      <input [(ngModel)]="person.allergies" placeholder="allergies">
+    </label>
+  </div>
+</div>
