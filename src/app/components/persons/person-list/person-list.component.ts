@@ -10,7 +10,6 @@ import { PersonService } from '../../../services/person.service';
 export class PersonListComponent implements OnInit {
 
   persons: Person[];
-  selectedPerson: Person;
 
   constructor(private personService: PersonService) { }
 
@@ -23,13 +22,8 @@ export class PersonListComponent implements OnInit {
 
   private fetchDataFromBackend() {
     this.personService.getPersons().subscribe(result => {
-      console.log(result);
       this.persons = result;
     });
-  }
-
-  onSelect(person: Person): void {
-    this.selectedPerson = person;
   }
 
 }

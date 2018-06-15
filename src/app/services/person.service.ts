@@ -18,6 +18,10 @@ export class PersonService {
     return this.httpClient.get<Person[]>(this.personsUrl);
   }
 
+  public getPerson(id: number): Observable<Person> {
+    return this.httpClient.get<Person>(`${this.personsUrl}/${id}`);
+  }
+
   public savePerson(person: Person): Observable<Person> {
     return this.httpClient.post<Person>(this.personsUrl, person, httpOptions);
   }

@@ -23,12 +23,10 @@
     <td>{{person.medication}}</td>
     <td>{{person.allergies}}</td>
     <td>
-      <button type="button" class="btn btn-primary" (click)="onSelect(person)">Profile</button>
+      <button routerLink="/profile/{{person.id}}" type="button" class="btn btn-primary">Profile</button>
     </td>
     <td>
       <button type="button" class="btn btn-danger">Delete</button>
     </td>
   </tr>
 </table>
-
-<app-person-profile [person]="selectedPerson"></app-person-profile>
