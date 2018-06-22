@@ -18,4 +18,8 @@ export class MeasurementService {
     return this.httpClient.get<Measurement[]>(`${this.personsUrl}/${pid}/measurements`);
   }
 
+  public addMeasurement(pid: number, measurement: Measurement): Observable<Measurement> {
+    return this.httpClient.post<Measurement>(`${this.personsUrl}/${pid}/measurements`, measurement, httpOptions);
+  }
+
 }

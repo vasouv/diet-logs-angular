@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MeasurementListComponent implements OnInit {
 
-  measurements:Measurement[];
+  measurements: Measurement[];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +20,7 @@ export class MeasurementListComponent implements OnInit {
     this.getMeasurements();
   }
 
-  getMeasurements():void{
+  getMeasurements(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.measurementService.getMeasurements(id).subscribe(measurements => this.measurements = measurements);
   }

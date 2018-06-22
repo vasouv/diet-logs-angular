@@ -16,6 +16,7 @@ import { AppointmentsListComponent } from './components/appointments/appointment
 import { PersonProfileComponent } from './components/persons/person-profile/person-profile.component';
 import { MeasurementListComponent } from './components/measurements/measurement-list/measurement-list.component';
 import { MeasurementService } from './services/measurement.service';
+import { MeasurementNewFormComponent } from './components/measurements/measurement-new-form/measurement-new-form.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MeasurementService } from './services/measurement.service';
     NotFoundComponent,
     AppointmentsListComponent,
     PersonProfileComponent,
-    MeasurementListComponent
+    MeasurementListComponent,
+    MeasurementNewFormComponent
   ],
   imports: [
     BrowserModule,
