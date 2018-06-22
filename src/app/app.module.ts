@@ -14,6 +14,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppointmentsListComponent } from './components/appointments/appointments-list/appointments-list.component';
 import { PersonProfileComponent } from './components/persons/person-profile/person-profile.component';
+import { MeasurementListComponent } from './components/measurements/measurement-list/measurement-list.component';
+import { MeasurementService } from './services/measurement.service';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { PersonProfileComponent } from './components/persons/person-profile/pers
     HomeComponent,
     NotFoundComponent,
     AppointmentsListComponent,
-    PersonProfileComponent
+    PersonProfileComponent,
+    MeasurementListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { PersonProfileComponent } from './components/persons/person-profile/pers
     AppRoutingModule,
     FormsModule
   ],
-  providers: [PersonService],
+  providers: [PersonService, MeasurementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 <div *ngIf="person">
   <h2>{{ person.name | uppercase }} Details</h2>
+  <button class="btn btn-light" (click)="goBack()">Back</button>
+  <app-measurement-list></app-measurement-list>
   <div>
     <span>id: </span>{{ person.id }}</div>
   <div>
@@ -47,5 +49,5 @@
       <input [(ngModel)]="person.allergies" placeholder="allergies">
     </label>
   </div>
-  <button class="btn btn-light" (click)="goBack()">Back</button>
+  
 </div>
