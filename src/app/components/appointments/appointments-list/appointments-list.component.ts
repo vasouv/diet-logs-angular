@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Appointment } from '../../../models/Appointment';
+import { AppointmentService } from '../../../services/appointment.service';
 
 @Component({
   selector: 'app-appointments-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentsListComponent implements OnInit {
 
-  constructor() { }
+  appointments: Appointment[];
+
+  constructor(private appointmentService: AppointmentService) { }
 
   ngOnInit() {
+    this.appointments = [];
+    this.getAppointments();
+  }
+
+  getAppointments(): void {
+    this.appointmentService.getAppointments().subscribe(appointments => this.appointments = appointments);
   }
 
 }

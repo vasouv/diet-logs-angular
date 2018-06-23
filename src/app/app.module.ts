@@ -17,6 +17,7 @@ import { PersonProfileComponent } from './components/persons/person-profile/pers
 import { MeasurementListComponent } from './components/measurements/measurement-list/measurement-list.component';
 import { MeasurementService } from './services/measurement.service';
 import { MeasurementNewFormComponent } from './components/measurements/measurement-new-form/measurement-new-form.component';
+import { AppointmentService } from './services/appointment.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { MeasurementNewFormComponent } from './components/measurements/measureme
     AppRoutingModule,
     FormsModule
   ],
-  providers: [PersonService, MeasurementService],
+  providers: [PersonService, MeasurementService, AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
