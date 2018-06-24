@@ -1,6 +1,7 @@
 <div *ngIf="person">
   <h2>{{ person.name | uppercase }} Details</h2>
   <button class="btn btn-light" (click)="goBack()">Back</button>
+  <app-appointment-profile></app-appointment-profile>
   <app-measurement-new-form></app-measurement-new-form>
   <app-measurement-list></app-measurement-list>
   <div>

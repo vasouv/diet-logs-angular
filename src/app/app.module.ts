@@ -18,6 +18,7 @@ import { MeasurementListComponent } from './components/measurements/measurement-
 import { MeasurementService } from './services/measurement.service';
 import { MeasurementNewFormComponent } from './components/measurements/measurement-new-form/measurement-new-form.component';
 import { AppointmentService } from './services/appointment.service';
+import { AppointmentProfileComponent } from './components/appointments/appointment-profile/appointment-profile.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AppointmentService } from './services/appointment.service';
     AppointmentsListComponent,
     PersonProfileComponent,
     MeasurementListComponent,
-    MeasurementNewFormComponent
+    MeasurementNewFormComponent,
+    AppointmentProfileComponent
   ],
   imports: [
     BrowserModule,
