@@ -1,55 +1,99 @@
 <div *ngIf="person">
-  <h2>{{ person.name | uppercase }} Details</h2>
-  <button class="btn btn-light" (click)="goBack()">Back</button>
-  <app-appointment-profile></app-appointment-profile>
-  <app-measurement-new-form></app-measurement-new-form>
-  <app-measurement-list></app-measurement-list>
-  <div>
-    <span>id: </span>{{ person.id }}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="person.name" placeholder="name">
-    </label>
+
+  <div class="row">
+    <div class="col-11">
+      <h1>{{ person.name | uppercase }} Details</h1>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-dark" (click)="goBack()">Back</button>
+    </div>
   </div>
-  <div>
-    <label>address:
-      <input [(ngModel)]="person.address" placeholder="address">
-    </label>
+  <!-- Personal Information Section -->
+  <div class="card mb-3">
+    <div class="card-header">Personal Information</div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <div class="form-control">{{ person.name }}</div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-8">
+          <div class="form-group">
+            <div class="form-control">{{person.address}}</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <div class="form-control">{{person.phone}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-control">{{person.age}}</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="form-control">{{person.height}} metres</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="form-control">{{person.targetkg}} Kg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <div class="form-control">{{person.illness}}</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="form-control">{{person.medication}}</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="form-control">{{person.allergies}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
-  <div>
-    <label>phone:
-      <input [(ngModel)]="person.phone" placeholder="phone">
-    </label>
+
+  <div class="card-deck">
+    <!-- Food Habit Section -->
+    <div class="card mb-3">
+      <div class="card-header">Food Habits</div>
+      <div class="card-body">Placeholder</div>
+    </div>
+
+    <!-- Appointment Section -->
+    <div class="card mb-3">
+      <div class="card-header">Appointment</div>
+      <div class="card-body">
+        <app-appointment-profile></app-appointment-profile>
+      </div>
+    </div>
   </div>
-  <div>
-    <label>age:
-      <input [(ngModel)]="person.age" placeholder="age">
-    </label>
+
+  <!-- Measurements Section -->
+  <div class="card mb-3">
+    <div class="card-header">Measurements</div>
+    <div class="card-body">
+      <app-measurement-new-form></app-measurement-new-form>
+      <app-measurement-list></app-measurement-list>
+      <!-- Chart Section -->
+    </div>
   </div>
-  <div>
-    <label>height:
-      <input [(ngModel)]="person.height" placeholder="height">
-    </label>
-  </div>
-  <div>
-    <label>target kg:
-      <input [(ngModel)]="person.targetkg" placeholder="targetkg">
-    </label>
-  </div>
-  <div>
-    <label>illness:
-      <input [(ngModel)]="person.illness" placeholder="illness">
-    </label>
-  </div>
-  <div>
-    <label>medication:
-      <input [(ngModel)]="person.medication" placeholder="medication">
-    </label>
-  </div>
-  <div>
-    <label>allergies:
-      <input [(ngModel)]="person.allergies" placeholder="allergies">
-    </label>
-  </div>
-  
+
 </div>

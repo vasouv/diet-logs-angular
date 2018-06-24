@@ -1,7 +1,9 @@
-<table *ngIf="appointment; else noAppointment">
-  <tr>
-    <td>{{ appointment.appointmentDate }}</td>
-    <td>{{ appointment.appointmentTime }}</td>
-  </tr>
-</table>
-<ng-template #noAppointment>There is no appointment set</ng-template>
+<div *ngIf="appointment; else noAppointment" class="alert alert-info" role="alert">
+  <strong>Day: </strong>{{appointment.appointmentDate}} <strong>Time: </strong>{{appointment.appointmentTime}}
+</div>
+
+<ng-template #noAppointment>
+  <div class="alert alert-warning">
+    There is no appointment set
+  </div>
+</ng-template>

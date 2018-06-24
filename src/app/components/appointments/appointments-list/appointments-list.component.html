@@ -1,19 +1,49 @@
-<table class="table table-hover">
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Day</th>
-    <th scope="col">Time</th>
-    <th scope="col">Person</th>
-    <th scope="col">Address</th>
-  </tr>
-  <tr *ngFor="let appointment of appointments">
-    <td>{{appointment.id}}</td>
-    <td>{{appointment.appointmentDate}}</td>
-    <td>{{appointment.appointmentTime}}</td>
-    <td>{{appointment.person.name}}</td>
-    <td>{{appointment.person.address}}</td>
-    <td>
-      <button type="button" class="btn btn-danger">Delete</button>
-    </td>
-  </tr>
-</table>
+<div class="card mb-3">
+  <div class="card-header">Today's Appointments</div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Day</th>
+        <th scope="col">Time</th>
+        <th scope="col">Person</th>
+        <th scope="col">Address</th>
+      </tr>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{appointment.id}}</td>
+        <td>{{appointment.appointmentDate}}</td>
+        <td>{{appointment.appointmentTime}}</td>
+        <td>{{appointment.person.name}}</td>
+        <td>{{appointment.person.address}}</td>
+        <td>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header">Tomorrow's Appointments</div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Day</th>
+        <th scope="col">Time</th>
+        <th scope="col">Person</th>
+        <th scope="col">Address</th>
+      </tr>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{appointment.id}}</td>
+        <td>{{appointment.appointmentDate}}</td>
+        <td>{{appointment.appointmentTime}}</td>
+        <td>{{appointment.person.name}}</td>
+        <td>{{appointment.person.address}}</td>
+        <td>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,10 +1,6 @@
-<h2>Add New Measurement</h2>
-<div class="card card-body mb-3">
-  <form>
-    <div class="form-group">
-      <label for="frmWeight">Weight (Kg)</label>
-      <input id="frmWeight" type="number" class="form-control" placeholder="Measured weight..." required [(ngModel)]="formWeight" name="weight"/>
-    </div>
-    <button (click)="addMeasurement()" class="btn btn-primary">Add</button>
-  </form>
-</div>
+<form class="form-inline mb-3">
+  <label class="mr-3" for="frmWeight">Weight (Kg)</label>
+  <input id="frmWeight" type="number" class="form-control mr-3" placeholder="Measured weight..." required [(ngModel)]="formWeight"
+    name="weight" />
+  <button (click)="addMeasurement()" class="btn btn-primary mr-3">Add</button>
+</form>
