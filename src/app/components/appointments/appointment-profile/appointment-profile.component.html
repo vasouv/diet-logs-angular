@@ -1,0 +1,7 @@
+<table *ngIf="appointment; else noAppointment">
+  <tr>
+    <td>{{ appointment.appointmentDate }}</td>
+    <td>{{ appointment.appointmentTime }}</td>
+  </tr>
+</table>
+<ng-template #noAppointment>There is no appointment set</ng-template>
