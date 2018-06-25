@@ -25,4 +25,9 @@ export class MeasurementListComponent implements OnInit {
     this.measurementService.getMeasurements(id).subscribe(measurements => this.measurements = measurements);
   }
 
+  deleteMeasurement(measurement: Measurement): void {
+    const pid = +this.route.snapshot.paramMap.get('id');
+    this.measurementService.deleteMeasurement(pid, measurement.id).subscribe(data => console.log(data));
+  }
+
 }

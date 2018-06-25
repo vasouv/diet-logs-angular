@@ -11,7 +11,7 @@
     <td>{{measurement.weightkg}}</td>
     <td>{{measurement.bmi}}</td>
     <td>
-      <button type="button" class="btn btn-danger">Delete</button>
+      <button (click)="deleteMeasurement(measurement)" type="button" class="btn btn-danger">Delete</button>
     </td>
   </tr>
 </table>
