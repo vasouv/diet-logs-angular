@@ -26,4 +26,8 @@ export class PersonListComponent implements OnInit {
     });
   }
 
+  deletePerson(person: Person): void {
+    this.personService.deletePerson(person.id).subscribe(result => console.log(result));
+  }
+
 }

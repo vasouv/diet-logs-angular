@@ -26,4 +26,8 @@ export class PersonService {
     return this.httpClient.post<Person>(this.personsUrl, person, httpOptions);
   }
 
+  public deletePerson(id: number): Observable<Person> {
+    return this.httpClient.delete<Person>(`${this.personsUrl}/${id}`, httpOptions);
+  }
+
 }
