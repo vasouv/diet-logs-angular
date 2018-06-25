@@ -18,6 +18,7 @@ export class AppointmentProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.appointment = new Appointment(0, null, null, null);
     this.getAppointment();
   }
 
@@ -26,6 +27,18 @@ export class AppointmentProfileComponent implements OnInit {
     this.appointmentService.getAppointmentByPersonID(id).subscribe(
       appointment => this.appointment = appointment
     );
+  }
+
+  addAppointment(appDate, appTime) {
+    if (!appDate || !appTime) {
+      alert("Appointment must have date and time");
+    } else {
+      const id = +this.route.snapshot.paramMap.get('id');
+      let appToSave = new Appointment(0, appDate, appTime, null);
+      this.appointmentService.saveAppointmentByPersonID(id, appToSave).subscribe(
+        appointment => this.appointment = appointment
+      );
+    }
   }
 
 }

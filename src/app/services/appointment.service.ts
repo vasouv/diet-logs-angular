@@ -23,4 +23,8 @@ export class AppointmentService {
     return this.httpClient.get<Appointment>(`${this.personsUrl}/${id}/appointment`);
   }
 
+  public saveAppointmentByPersonID(id: number, appToSave: Appointment): Observable<Appointment> {
+    return this.httpClient.post<Appointment>(`${this.personsUrl}/${id}/appointment`, appToSave, httpOptions);
+  }
+
 }
