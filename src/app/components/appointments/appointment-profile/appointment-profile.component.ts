@@ -18,6 +18,7 @@ export class AppointmentProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.appointment = new Appointment(0, null, null, null);
     this.getAppointment();
   }
 
