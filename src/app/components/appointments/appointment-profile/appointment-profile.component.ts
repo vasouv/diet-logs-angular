@@ -29,4 +29,16 @@ export class AppointmentProfileComponent implements OnInit {
     );
   }
 
+  addAppointment(appDate, appTime) {
+    if (!appDate || !appTime) {
+      alert("Appointment must have date and time");
+    } else {
+      const id = +this.route.snapshot.paramMap.get('id');
+      let appToSave = new Appointment(0, appDate, appTime, null);
+      this.appointmentService.saveAppointmentByPersonID(id, appToSave).subscribe(
+        appointment => this.appointment = appointment
+      );
+    }
+  }
+
 }

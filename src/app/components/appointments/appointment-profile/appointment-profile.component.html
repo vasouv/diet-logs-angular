@@ -1,7 +1,22 @@
 <div *ngIf="appointment.id != null" class="alert alert-info" role="alert">
-  <strong>Day: </strong>{{appointment.appointmentDate}} <strong>Time: </strong>{{appointment.appointmentTime}}
+  <div class="row">
+    <div class="col">
+      <strong>Day: </strong>{{appointment.appointmentDate}}
+    </div>
+    <div class="col">
+      <strong>Time: </strong>{{appointment.appointmentTime}}
+    </div>
+    <div class="col">
+      <button class="btn btn-sm btn-danger">Delete</button>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="appointment.id == null" class="alert alert-warning" role="alert">
   There is no appointment set
+  <form class="form-inline mb-3">
+    <input #appDate type="date" class="form-control mr-3" placeholder="ex. 2018-07-08" required />
+    <input #appTime type="time" class="form-control mr-3" placeholder="ex. 13.07" required>
+    <button (click)="addAppointment(appDate.value,appTime.value)" class="btn btn-primary mr-3">Add</button>
+  </form>
 </div>
