@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { Appointment } from '../models/Appointment';
+import { backendAppointmentsUrl, backendPersonsUrl } from "../static-stuff/static-stuff";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -10,8 +11,8 @@ const httpOptions = {
 @Injectable()
 export class AppointmentService {
 
-  appointmentsUrl: string = 'http://localhost:8080/appointments';
-  personsUrl: string = 'http://localhost:8080/persons';
+  appointmentsUrl: string = backendAppointmentsUrl;
+  personsUrl: string = backendPersonsUrl;
 
   constructor(private httpClient: HttpClient) { }
 
