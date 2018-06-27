@@ -19,6 +19,7 @@ import { MeasurementService } from './services/measurement.service';
 import { MeasurementNewFormComponent } from './components/measurements/measurement-new-form/measurement-new-form.component';
 import { AppointmentService } from './services/appointment.service';
 import { AppointmentProfileComponent } from './components/appointments/appointment-profile/appointment-profile.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AppointmentProfileComponent } from './components/appointments/appointme
     PersonProfileComponent,
     MeasurementListComponent,
     MeasurementNewFormComponent,
-    AppointmentProfileComponent
+    AppointmentProfileComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
