@@ -29,7 +29,7 @@ export class AppointmentProfileComponent implements OnInit {
     );
   }
 
-  addAppointment(appDate, appTime) {
+  addAppointment(appDate, appTime): void {
     if (!appDate || !appTime) {
       alert("Appointment must have date and time");
     } else {
@@ -39,6 +39,10 @@ export class AppointmentProfileComponent implements OnInit {
         appointment => this.appointment = appointment
       );
     }
+  }
+
+  deleteAppointment(appid: number): void {
+    this.appointmentService.deleteAppointment(this.appointment.id).subscribe(del => console.log(del));
   }
 
 }

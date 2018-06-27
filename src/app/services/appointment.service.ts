@@ -27,4 +27,8 @@ export class AppointmentService {
     return this.httpClient.post<Appointment>(`${this.personsUrl}/${id}/appointment`, appToSave, httpOptions);
   }
 
+  public deleteAppointment(appid: number): Observable<Appointment> {
+    return this.httpClient.delete<Appointment>(`${this.appointmentsUrl}/${appid}`);
+  }
+
 }

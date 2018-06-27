@@ -29,7 +29,7 @@
           <button routerLink="/profile/{{person.id}}" type="button" class="btn btn-primary">Profile</button>
         </td>
         <td>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button (click)="deletePerson(person)" type="button" class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </table>

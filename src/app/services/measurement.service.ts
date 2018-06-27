@@ -22,4 +22,8 @@ export class MeasurementService {
     return this.httpClient.post<Measurement>(`${this.personsUrl}/${pid}/measurements`, measurement, httpOptions);
   }
 
+  public deleteMeasurement(pid: number, mid: number): Observable<Measurement> {
+    return this.httpClient.delete<Measurement>(`${this.personsUrl}/${pid}/measurements/${mid}`, httpOptions);
+  }
+
 }
