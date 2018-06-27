@@ -1,0 +1,9 @@
+<!-- <div *ngIf="chartMeasurements.length != 0">
+  <canvas id="canvas">{{chartData}}</canvas>
+</div>
+<div *ngIf="chartMeasurements.length ==0 ">
+  Sorry, no measurements to create a chart!
+</div> -->
+<div [hidden]="!chartData">
+  <canvas id="canvas">{{chartData}}</canvas>
+</div>
