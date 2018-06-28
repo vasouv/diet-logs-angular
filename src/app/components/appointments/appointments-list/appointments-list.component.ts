@@ -9,17 +9,20 @@ import { AppointmentService } from '../../../services/appointment.service';
 })
 export class AppointmentsListComponent implements OnInit {
 
-  appointments: Appointment[];
+  appointmentsToday: Appointment[];
+  appointmentsTomorrow: Appointment[];
 
   constructor(private appointmentService: AppointmentService) { }
 
   ngOnInit() {
-    this.appointments = [];
+    this.appointmentsToday = [];
+    this.appointmentsTomorrow = [];
     this.getAppointments();
   }
 
   getAppointments(): void {
-    this.appointmentService.getAppointments().subscribe(appointments => this.appointments = appointments);
+    this.appointmentService.getAppointmentsToday().subscribe(appointmentsToday => this.appointmentsToday = appointmentsToday);
+    this.appointmentService.getAppointmentsTomorrow().subscribe(appointmentsTomorrow => this.appointmentsTomorrow = appointmentsTomorrow);
   }
 
 }

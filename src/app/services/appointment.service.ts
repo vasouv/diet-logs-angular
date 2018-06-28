@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { Appointment } from '../models/Appointment';
-import { backendAppointmentsUrl, backendPersonsUrl } from "../static-stuff/static-stuff";
+import { backendAppointmentsUrl, backendPersonsUrl, backendAppointmentsByDay } from "../static-stuff/static-stuff";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,6 +13,7 @@ export class AppointmentService {
 
   appointmentsUrl: string = backendAppointmentsUrl;
   personsUrl: string = backendPersonsUrl;
+  appointmentsByDayUrl: string = backendAppointmentsByDay;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -30,6 +31,14 @@ export class AppointmentService {
 
   public deleteAppointment(appid: number): Observable<Appointment> {
     return this.httpClient.delete<Appointment>(`${this.appointmentsUrl}/${appid}`);
+  }
+
+  public getAppointmentsToday(): Observable<Appointment[]> {
+    return this.httpClient.get<Appointment[]>(`${this.appointmentsByDayUrl}/today`);
+  }
+
+  public getAppointmentsTomorrow(): Observable<Appointment[]> {
+    return this.httpClient.get<Appointment[]>(`${this.appointmentsByDayUrl}/tomorrow`);
   }
 
 }
